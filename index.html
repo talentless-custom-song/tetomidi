@@ -92,12 +92,15 @@ footer.credit{position:relative;padding:32px max(28px,7vw) calc(32px + env(safe-
 #about .credit{margin-top:44px;font-size:13px;color:var(--mute)}
 
 /* Liquid glass */
-#burger,.links a{background:linear-gradient(135deg,rgba(255,255,255,.18),rgba(255,255,255,.04));-webkit-backdrop-filter:blur(16px) saturate(180%);backdrop-filter:blur(16px) saturate(180%);border:1px solid rgba(255,255,255,.16);box-shadow:inset 1px 1px 0 rgba(255,255,255,.4),inset -1px -1px 0 rgba(255,255,255,.08),inset 0 0 14px rgba(255,255,255,.05),0 10px 28px rgba(0,0,0,.55);transition:transform .3s cubic-bezier(.2,.9,.3,1.3),background .25s,box-shadow .25s}
-#burger:hover,.links a:hover{background:linear-gradient(135deg,rgba(255,255,255,.28),rgba(255,255,255,.08));transform:translateY(-1px) scale(1.04)}
-#burger:active,.links a:active{transform:scale(.96)}
+#burger,#lang,.links a{background:linear-gradient(135deg,rgba(255,255,255,.18),rgba(255,255,255,.04));-webkit-backdrop-filter:blur(16px) saturate(180%);backdrop-filter:blur(16px) saturate(180%);border:1px solid rgba(255,255,255,.16);box-shadow:inset 1px 1px 0 rgba(255,255,255,.4),inset -1px -1px 0 rgba(255,255,255,.08),inset 0 0 14px rgba(255,255,255,.05),0 10px 28px rgba(0,0,0,.55);transition:transform .3s cubic-bezier(.2,.9,.3,1.3),background .25s,box-shadow .25s}
+#burger:hover,#lang:hover,.links a:hover{background:linear-gradient(135deg,rgba(255,255,255,.28),rgba(255,255,255,.08));transform:translateY(-1px) scale(1.04)}
+#burger:active,#lang:active,.links a:active{transform:scale(.96)}
 .links a{padding:13px 22px;border-radius:999px;color:var(--ink)}
 .links a:hover{color:var(--ink)}
 #burger{border-radius:50%}
+#lang{position:fixed;z-index:20;top:calc(20px + env(safe-area-inset-top,0px));right:calc(max(20px,5vw) + 58px);height:48px;padding:0 18px 0 14px;border-radius:999px;color:var(--ink);cursor:pointer;display:flex;align-items:center;gap:8px;font:500 14px var(--sans)}
+#lang svg{width:20px;height:20px;flex:none}
+body:not(.entered) #lang{opacity:0;pointer-events:none}
 body::before{content:"";position:fixed;left:-20%;right:-20%;bottom:-30%;height:65%;background:radial-gradient(ellipse at 50% 100%,rgba(255,255,255,.16),transparent 65%);pointer-events:none}
 
 .more{max-width:720px;padding:72px 0 24px}
@@ -124,7 +127,11 @@ body::before{content:"";position:fixed;left:-20%;right:-20%;bottom:-30%;height:6
 <symbol id="discord" viewBox="0 0 24 24"><path fill="currentColor" d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189z"/></symbol>
 <symbol id="windows" viewBox="0 0 24 24"><path fill="currentColor" d="M0 0v11.408h11.408V0zm12.594 0v11.408H24V0zM0 12.594V24h11.408V12.594zm12.594 0V24H24V12.594z"/></symbol>
 <symbol id="linux" viewBox="0 0 24 24"><g fill="currentColor"><ellipse cx="12" cy="13.5" rx="6.5" ry="8.5"/><ellipse cx="6" cy="15" rx="1.6" ry="4" transform="rotate(12 6 15)"/><ellipse cx="18" cy="15" rx="1.6" ry="4" transform="rotate(-12 18 15)"/><ellipse cx="8.3" cy="22.2" rx="3" ry="1.3"/><ellipse cx="15.7" cy="22.2" rx="3" ry="1.3"/></g><ellipse cx="12" cy="15.5" rx="3.7" ry="5.4" fill="#000" opacity=".85"/><circle cx="10.3" cy="8" r=".9" fill="#000"/><circle cx="13.7" cy="8" r=".9" fill="#000"/><ellipse cx="12" cy="10.2" rx="1.7" ry=".9" fill="#000"/></symbol>
+<symbol id="translate" viewBox="0 0 24 24"><path fill="currentColor" d="M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"/></symbol>
+<symbol id="android" viewBox="0 0 24 24"><path fill="currentColor" d="M17.523 15.3414c-.5511 0-.9993-.4486-.9993-.9997s.4483-.9993.9993-.9993c.5511 0 .9993.4483.9993.9993.0001.5511-.4482.9997-.9993.9997m-11.046 0c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.5511 0 .9993.4483.9993.9993 0 .5511-.4483.9997-.9993.9997m11.4045-6.02l1.9973-3.4592a.416.416 0 00-.1521-.5676.416.416 0 00-.5676.1521l-2.0223 3.503C15.5902 8.2439 13.8533 7.8508 12 7.8508s-3.5902.3931-5.1367 1.0989L4.841 5.4467a.4161.4161 0 00-.5677-.1521.4157.4157 0 00-.1521.5676l1.9973 3.4592C2.6889 11.1867.3432 14.6589 0 18.761h24c-.3435-4.1021-2.6892-7.5743-6.1185-9.4396"/></symbol>
 </svg>
+
+<button id="lang" type="button" aria-label="Change language"><svg aria-hidden="true"><use href="#translate"/></svg><span id="langtxt">Tiếng Việt</span></button>
 
 <button id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
 
@@ -141,18 +148,18 @@ body::before{content:"";position:fixed;left:-20%;right:-20%;bottom:-30%;height:6
       <button id="back" type="button">Back to menu</button>
       <h3 id="ah">Teto Transcriber, the bot in our server</h3>
       <p>Join the Discord server and you can use the bot right away. It turns a song into a playable piano MIDI file.</p>
-      <p>Run <code>/transcribe</code> in the teto-bot channel, then choose one option:</p>
+      <p data-vi="Chạy <code>/transcribe</code> trong kênh teto-bot, rồi chọn một tùy chọn:">Run <code>/transcribe</code> in the teto-bot channel, then choose one option:</p>
       <dl>
         <div><dt>file</dt><dd>MP3, WAV, FLAC, OGG or M4A, up to 50 MB</dd></div>
         <div><dt>url</dt><dd>A SoundCloud link or a direct audio link</dd></div>
         <div><dt>limits</dt><dd>Piano only, 50 MB maximum, 40 minutes maximum</dd></div>
       </dl>
-      <p>Type <code>/help</code> to see every command.</p>
+      <p data-vi="Gõ <code>/help</code> để xem mọi lệnh.">Type <code>/help</code> to see every command.</p>
       <a class="l" href="https://discord.gg/ChU3M3pNX" target="_blank" rel="noopener"><svg class="dc" aria-hidden="true"><use href="#discord"/></svg>Join the server</a>
       <h3>MP3 to MIDI</h3>
       <p>Our own web tool. Upload an MP3 and get a MIDI file back. It supports guitar and piano.</p>
       <a class="l" href="https://tetomidi-transcriber.vercel.app/" target="_blank" rel="noopener">Open MP3 to MIDI</a>
-      <p style="margin-top:22px">Got your MIDI file? Watch and hear it in the <a class="l" href="/piano-roll/">MIDI player</a>.</p>
+      <p style="margin-top:22px" data-vi="Đã có tệp MIDI? Xem và nghe nó trong <a class=&quot;l&quot; href=&quot;/piano-roll/&quot;>Trình phát MIDI</a>.">Got your MIDI file? Watch and hear it in the <a class="l" href="/piano-roll/">MIDI player</a>.</p>
       <p class="credit">tetomidi is a website built by xiubell.</p>
     </section>
   </div>
@@ -169,7 +176,8 @@ body::before{content:"";position:fixed;left:-20%;right:-20%;bottom:-30%;height:6
       <a href="https://tetomidi-editor.vercel.app/" target="_blank" rel="noopener">Open the MIDI editor</a>
       <a href="https://tetomidi-transcriber.vercel.app/" target="_blank" rel="noopener">Open MP3 to MIDI</a>
       <a href="downloads/tetomidi-setup.exe" download><svg class="dc" aria-hidden="true"><use href="#windows"/></svg>Download for Windows</a>
-      <a href="downloads/tetomidi-linux.tar" download><svg class="dc" aria-hidden="true"><use href="#linux"/></svg>Download for Linux</a>
+      <a href="https://www.mediafire.com/file/1prgzw9ghmtke8h/tetomidi-linux.zip/file" target="_blank" rel="noopener"><svg class="dc" aria-hidden="true"><use href="#linux"/></svg>Download for Linux</a>
+      <a href="https://www.mediafire.com/file/tvoz82r9ngta86o/tetomidi.apk/file" target="_blank" rel="noopener"><svg class="dc" aria-hidden="true"><use href="#android"/></svg>Download for Android</a>
     </div>
   </div>
 
@@ -179,7 +187,7 @@ body::before{content:"";position:fixed;left:-20%;right:-20%;bottom:-30%;height:6
 
     <div class="blk">
       <h3>Discord server</h3>
-      <p>Share songs and MIDI files, ask questions and meet other players. The Teto Transcriber bot lives here: type <b>/transcribe</b> in the teto-bot channel to turn a song into a piano MIDI file.</p>
+      <p data-vi="Chia sẻ bài hát và tệp MIDI, đặt câu hỏi và gặp gỡ những người chơi khác. Bot Teto Transcriber ở ngay đây: gõ <b>/transcribe</b> trong kênh teto-bot để biến bài hát thành tệp MIDI piano.">Share songs and MIDI files, ask questions and meet other players. The Teto Transcriber bot lives here: type <b>/transcribe</b> in the teto-bot channel to turn a song into a piano MIDI file.</p>
       <a class="tl" href="https://discord.gg/peaqm6uqgB" target="_blank" rel="noopener">Join the server</a>
     </div>
 
@@ -202,11 +210,22 @@ body::before{content:"";position:fixed;left:-20%;right:-20%;bottom:-30%;height:6
     </div>
 
     <div class="blk">
-      <h3>Desktop app</h3>
-      <p>Get the tetomidi app for your computer.</p>
+      <h3>About the app</h3>
+      <p>tetomidi for Android turns a song into a MIDI file right on your phone. Pick an audio or video file, or paste a SoundCloud link, tap Transcribe, and save the MIDI when it is finished. Files can be up to 40 minutes long.</p>
+      <ol class="steps">
+        <li>Tap the box and choose an audio or video file, or paste a link.</li>
+        <li>Tap Transcribe and wait a few minutes.</li>
+        <li>Save the MIDI file, then open it in the MIDI player.</li>
+      </ol>
+    </div>
+
+    <div class="blk">
+      <h3>Apps</h3>
+      <p>Get the tetomidi app for your computer or your Android phone.</p>
       <div class="links">
         <a href="downloads/tetomidi-setup.exe" download><svg class="dc" aria-hidden="true"><use href="#windows"/></svg>Download for Windows</a>
-        <a href="downloads/tetomidi-linux-medifire.link" download><svg class="dc" aria-hidden="true"><use href="#linux"/></svg>Download for Linux</a>
+        <a href="https://www.mediafire.com/file/1prgzw9ghmtke8h/tetomidi-linux.zip/file" target="_blank" rel="noopener"><svg class="dc" aria-hidden="true"><use href="#linux"/></svg>Download for Linux</a>
+        <a href="https://www.mediafire.com/file/tvoz82r9ngta86o/tetomidi.apk/file" target="_blank" rel="noopener"><svg class="dc" aria-hidden="true"><use href="#android"/></svg>Download for Android</a>
       </div>
     </div>
 
@@ -259,6 +278,33 @@ document.querySelectorAll("[data-logo]").forEach(function(i){i.src=LOGO});
   document.getElementById('aboutLink').addEventListener('click',function(e){e.preventDefault();menu.classList.add('about');menu.scrollTop=0});
   document.getElementById('back').addEventListener('click',function(){menu.classList.remove('about')});
   document.addEventListener('keydown',function(e){if(e.key==='Escape')toggle(false)});
+})();
+
+(function(){
+  var VI={"Discord server": "Máy chủ Discord", "Join the tetomidi community": "Tham gia cộng đồng tetomidi", "MIDI player piano roll": "Trình phát MIDI piano roll", "Open a MIDI file and watch every note": "Mở tệp MIDI và xem từng nốt nhạc", "MIDI editor": "Trình chỉnh sửa MIDI", "Write notes or import a MIDI file, then export it": "Viết nốt nhạc hoặc nhập tệp MIDI, rồi xuất ra", "MP3 to MIDI": "MP3 sang MIDI", "Turn an MP3 into MIDI, guitar and piano": "Chuyển MP3 thành MIDI, guitar và piano", "About the bot and MP3 to MIDI": "Giới thiệu về bot và MP3 sang MIDI", "Back to menu": "Quay lại menu", "Teto Transcriber, the bot in our server": "Teto Transcriber, bot trong máy chủ của chúng tôi", "Join the Discord server and you can use the bot right away. It turns a song into a playable piano MIDI file.": "Tham gia máy chủ Discord là bạn có thể dùng bot ngay. Bot biến một bài hát thành tệp MIDI piano có thể phát được.", "file": "tệp", "MP3, WAV, FLAC, OGG or M4A, up to 50 MB": "MP3, WAV, FLAC, OGG hoặc M4A, tối đa 50 MB", "url": "liên kết", "A SoundCloud link or a direct audio link": "Liên kết SoundCloud hoặc liên kết âm thanh trực tiếp", "limits": "giới hạn", "Piano only, 50 MB maximum, 40 minutes maximum": "Chỉ piano, tối đa 50 MB, tối đa 40 phút", "Join the server": "Tham gia máy chủ", "Our own web tool. Upload an MP3 and get a MIDI file back. It supports guitar and piano.": "Công cụ web do chúng tôi tự làm. Tải lên một tệp MP3 và nhận lại tệp MIDI. Hỗ trợ guitar và piano.", "Open MP3 to MIDI": "Mở MP3 sang MIDI", "MIDI player": "Trình phát MIDI", "tetomidi is a website built by xiubell.": "tetomidi là website do xiubell xây dựng.", "Play MIDI on a piano roll, turn songs into MIDI, and meet everyone on Discord.": "Phát MIDI trên piano roll, biến bài hát thành MIDI và gặp gỡ mọi người trên Discord.", "Join the Discord server": "Tham gia máy chủ Discord", "Open the MIDI player": "Mở trình phát MIDI", "Open the MIDI editor": "Mở trình chỉnh sửa MIDI", "Download for Windows": "Tải cho Windows", "Download for Linux": "Tải cho Linux", "Download for Android": "Tải cho Android", "A small home for MIDI.": "Một ngôi nhà nhỏ cho MIDI.", "tetomidi puts everything we make with MIDI in one place: a community on Discord, a player that shows every note on a piano roll, an editor to write your own MIDI, and tools that turn recordings into MIDI.": "tetomidi gom mọi thứ chúng tôi làm với MIDI vào một nơi: cộng đồng trên Discord, trình phát hiển thị từng nốt nhạc trên piano roll, trình chỉnh sửa để bạn viết MIDI của riêng mình, và các công cụ biến bản ghi âm thành MIDI.", "Open any MIDI file and watch the notes scroll across a piano roll while it plays with real instrument sounds. Each track uses the instrument saved in the file.": "Mở bất kỳ tệp MIDI nào và xem các nốt nhạc cuộn trên piano roll trong khi phát bằng âm thanh nhạc cụ thật. Mỗi track dùng nhạc cụ được lưu trong tệp.", "Draw notes on a piano roll, or import a MIDI file and change it. Pick piano, guitar or drums, then export as MIDI, WAV, MP3, FLAC or M4A.": "Vẽ nốt nhạc trên piano roll, hoặc nhập tệp MIDI rồi chỉnh sửa. Chọn piano, guitar hoặc trống, sau đó xuất ra MIDI, WAV, MP3, FLAC hoặc M4A.", "Upload an MP3 and get a MIDI file back. Guitar and piano are supported.": "Tải lên một tệp MP3 và nhận lại tệp MIDI. Hỗ trợ guitar và piano.", "About the app": "Giới thiệu ứng dụng", "tetomidi for Android turns a song into a MIDI file right on your phone. Pick an audio or video file, or paste a SoundCloud link, tap Transcribe, and save the MIDI when it is finished. Files can be up to 40 minutes long.": "tetomidi cho Android biến một bài hát thành tệp MIDI ngay trên điện thoại của bạn. Chọn một tệp âm thanh hoặc video, hoặc dán liên kết SoundCloud, nhấn Transcribe, rồi lưu tệp MIDI khi hoàn tất. Tệp có thể dài tối đa 40 phút.", "Tap the box and choose an audio or video file, or paste a link.": "Chạm vào ô và chọn một tệp âm thanh hoặc video, hoặc dán liên kết.", "Tap Transcribe and wait a few minutes.": "Nhấn Transcribe và chờ vài phút.", "Save the MIDI file, then open it in the MIDI player.": "Lưu tệp MIDI, rồi mở nó trong trình phát MIDI.", "Apps": "Ứng dụng", "Get the tetomidi app for your computer or your Android phone.": "Tải ứng dụng tetomidi cho máy tính hoặc điện thoại Android.", "From song to piano roll": "Từ bài hát đến piano roll", "Send your song to the Discord bot, or upload an MP3 to the MP3 to MIDI tool.": "Gửi bài hát cho bot Discord, hoặc tải một tệp MP3 lên công cụ MP3 sang MIDI.", "Download the MIDI file you get back.": "Tải tệp MIDI nhận được về.", "Drop it into the MIDI player and press Play.": "Thả nó vào trình phát MIDI rồi nhấn Play."};
+  var LS='tetomidi-lang', lang='en';
+  var nodes=[], blocks=[];
+  var w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,null);
+  var n;
+  while((n=w.nextNode())){
+    var p=n.parentNode;
+    if(!p||/^(SCRIPT|STYLE)$/i.test(p.nodeName)||(p.closest&&(p.closest('svg')||p.closest('[data-vi]'))))continue;
+    var t=n.nodeValue.trim();
+    if(t&&Object.prototype.hasOwnProperty.call(VI,t))nodes.push({n:n,en:n.nodeValue,t:t});
+  }
+  document.querySelectorAll('[data-vi]').forEach(function(el){blocks.push({el:el,en:el.innerHTML,vi:el.getAttribute('data-vi')})});
+  var btn=document.getElementById('lang'),txt=document.getElementById('langtxt');
+  function apply(l){
+    lang=l;
+    nodes.forEach(function(o){o.n.nodeValue=l==='vi'?o.en.replace(o.t,VI[o.t]):o.en});
+    blocks.forEach(function(b){b.el.innerHTML=l==='vi'?b.vi:b.en});
+    document.documentElement.lang=l;
+    txt.textContent=l==='vi'?'English':'Tiếng Việt';
+    btn.setAttribute('aria-label',l==='vi'?'Switch to English':'Chuyển sang tiếng Việt');
+    try{localStorage.setItem(LS,l)}catch(e){}
+  }
+  btn.addEventListener('click',function(){apply(lang==='en'?'vi':'en')});
+  try{if(localStorage.getItem(LS)==='vi')apply('vi')}catch(e){}
 })();
 </script>
 </body>
